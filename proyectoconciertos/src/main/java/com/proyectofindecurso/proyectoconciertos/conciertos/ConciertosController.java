@@ -19,25 +19,25 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/conciertos")
-@CrossOrigin(origins = "http://localhost:4200") //agregamos crossorigin para acceder desde el front
+@CrossOrigin(origins = "http://localhost:4200") // agregamos crossorigin para acceder desde el front
 
 public class ConciertosController {
     private final ConciertosService conciertoService;
 
     @GetMapping
     public List<Concierto> getAll() {
-            return conciertoService.getAll();
+        return conciertoService.getAll();
     }
 
-    @PostMapping    
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Concierto insert(@RequestBody Concierto concierto) {
         return conciertoService.insert(concierto);
     }
-    
+
     @PutMapping("/{id}")
     public Concierto update(@RequestBody Concierto c, @PathVariable int id) {
-        return conciertoService.update(c,id);
+        return conciertoService.update(c, id);
 
     }
 

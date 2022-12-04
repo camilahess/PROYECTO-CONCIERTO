@@ -19,6 +19,6 @@ public class VideosController {
 
     @GetMapping
     public List<Video> getVideos() {
-            return vService.getVideos();
-            }
-        }
+        return vService.getVideos();
+    }
+}

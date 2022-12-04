@@ -23,7 +23,7 @@ public class UsuariosService {
         return (List<Usuario>) usuariosRepository.findAll();
     }
 
-    public Usuario login(LoginDto loginDto) throws NoSuchAlgorithmException  {
+    public Usuario login(LoginDto loginDto) throws NoSuchAlgorithmException {
         return usuariosRepository.findByCorreoAndPassword(loginDto.getCorreo(), encodePassword(loginDto.getPassword()))
                 .orElseThrow(
                         () -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Correo y/o contraseña no válidos"));

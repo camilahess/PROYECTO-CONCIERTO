@@ -1,6 +1,5 @@
 package com.proyectofindecurso.proyectoconciertos.auth;
 
-
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
@@ -36,14 +35,14 @@ public class AuthController {
 
     @PostMapping("/registro")
     @ResponseStatus(HttpStatus.CREATED)
-    public void registro(@RequestBody UsuarioInsertDto userDto) throws NoSuchAlgorithmException  {
+    public void registro(@RequestBody UsuarioInsertDto userDto) throws NoSuchAlgorithmException {
         usuariosService.insert(new Usuario(userDto));
     }
 
     private String getToken(Usuario user) {
-        Algorithm algorithm = Algorithm.HMAC256("token101");
+        Algorithm algorithm = Algorithm.HMAC256("token100");
         String token = JWT.create()
-                .withIssuer("arturober")
+                .withIssuer("camilahess")
                 .withClaim("id", user.getId())
                 .withIssuedAt(new Date(System.currentTimeMillis()))
                 .withExpiresAt(new Date(System.currentTimeMillis() + (24 * 60 * 60 * 1000))) // Caduca en un día

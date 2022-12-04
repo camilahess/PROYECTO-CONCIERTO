@@ -2,7 +2,6 @@ package com.proyectofindecurso.proyectoconciertos.conciertos;
 
 import java.util.List;
 
-
 import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -17,7 +16,7 @@ public class ConciertosService {
     private final JdbcAggregateTemplate jdbcTemplate;
 
     public List<Concierto> getAll() {
-        return (List<Concierto>)conciertoRepository.findAll();
+        return (List<Concierto>) conciertoRepository.findAll();
     }
 
     public Concierto insert(Concierto concierto) {
@@ -25,7 +24,7 @@ public class ConciertosService {
     }
 
     public Concierto update(Concierto c, int id) {
-        if(!conciertoRepository.existsById(id)) {
+        if (!conciertoRepository.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Concierto no encontrado", null);
         }
         c.setId(id); // Al tener una id hace un update en lugar de un insert

@@ -12,6 +12,6 @@ public class ImagenesService {
     private final ImagenesRepository iRepository;
 
     public List<Imagen> getImagenes() {
-        return (List<Imagen>)iRepository.findAll();
+        return (List<Imagen>) iRepository.findAll();
     }
 }

@@ -8,9 +8,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Table("instaimages")
-@Data @NoArgsConstructor @AllArgsConstructor
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Imagen {
-    @Id private int id;
+    @Id
+    private int id;
     private String imagenes;
 
 }

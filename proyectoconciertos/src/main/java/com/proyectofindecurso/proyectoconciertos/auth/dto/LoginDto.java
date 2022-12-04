@@ -1,7 +1,5 @@
 package com.proyectofindecurso.proyectoconciertos.auth.dto;
 
-
-
 import org.hibernate.validator.constraints.Length;
 
 import jakarta.validation.constraints.Email;
@@ -9,7 +7,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data @NoArgsConstructor
+@Data
+@NoArgsConstructor
 public class LoginDto {
     @NotNull(message = "El correo es obligatorio")
     @Email(message = "El correo no tiene un formato correcto")

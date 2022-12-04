@@ -13,8 +13,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-
-
 //en request matchers autorizo todas las rutas para acceder desde el localhost:8080
 @EnableWebSecurity
 @Configuration
@@ -22,11 +20,11 @@ public class WebSecurityConfig {
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
-            .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
-            .authorizeHttpRequests( authorize -> authorize
-                .requestMatchers("/auth/login", "/auth/registro", "/conciertos", "/videos", "/instaimages", "/usuario", "/usuario/*").permitAll()
-                .anyRequest().authenticated()
-            );
+                .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/auth/login", "/auth/registro")
+                        .permitAll()
+                        .anyRequest().authenticated());
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         return http.build();
     }
@@ -47,4 +45,3 @@ public class WebSecurityConfig {
         return source;
     }
 }
-

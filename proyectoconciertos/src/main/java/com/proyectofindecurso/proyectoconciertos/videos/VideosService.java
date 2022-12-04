@@ -12,9 +12,7 @@ public class VideosService {
     private final VideosRepository vRepository;
 
     public List<Video> getVideos() {
-        return (List<Video>)vRepository.findAll();
+        return (List<Video>) vRepository.findAll();
     }
-
- 
 
 }

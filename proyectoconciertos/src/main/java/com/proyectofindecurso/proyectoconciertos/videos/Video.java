@@ -8,10 +8,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Table("videos")
-@Data @NoArgsConstructor @AllArgsConstructor
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Video {
-    @Id private int id;
+    @Id
+    private int id;
     private String nombre;
     private String video;
-    
+
 }

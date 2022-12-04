@@ -18,7 +18,6 @@ public class ImagenesController {
 
     @GetMapping
     public List<Imagen> getImagenes() {
-            return iService.getImagenes();
-            }
-        }
-
+        return iService.getImagenes();
+    }
+}
